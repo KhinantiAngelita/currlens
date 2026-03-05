@@ -88,43 +88,48 @@
       box-shadow: 0 8px 32px rgba(0,0,0,.4);
     }
 
+    /* IDR - Indonesia - Red */
     .bill-usd {
-      width: 200px; height: 90px;
-      background: linear-gradient(135deg, #0a2e1a 0%, #0d3d22 50%, #0a2e1a 100%);
-      border-color: rgba(79,255,120,.12);
-      top: 14%; left: 4%;
-      transform: rotate(-12deg);
+      width: 210px; height: 92px;
+      background: linear-gradient(135deg, #2e0a0a 0%, #4a1010 50%, #2e0a0a 100%);
+      border-color: rgba(239,68,68,.18);
+      top: 12%; left: 3%;
+      transform: rotate(-11deg);
       animation: float1 7s ease-in-out infinite;
     }
+    /* SGD - Singapore - Red/white */
     .bill-eur {
-      width: 220px; height: 96px;
-      background: linear-gradient(135deg, #0d1a3a 0%, #0f2255 50%, #0d1a3a 100%);
-      border-color: rgba(59,130,246,.15);
-      top: 18%; right: 3%;
-      transform: rotate(10deg);
+      width: 215px; height: 94px;
+      background: linear-gradient(135deg, #2e1010 0%, #8b1a1a 50%, #2e1010 100%);
+      border-color: rgba(252,165,165,.15);
+      top: 16%; right: 2%;
+      transform: rotate(9deg);
       animation: float2 8s ease-in-out infinite;
     }
+    /* MYR - Malaysia - Blue/red */
     .bill-jpy {
-      width: 190px; height: 84px;
-      background: linear-gradient(135deg, #2a1a0a 0%, #3d2810 50%, #2a1a0a 100%);
-      border-color: rgba(245,200,66,.12);
-      bottom: 22%; left: 6%;
-      transform: rotate(8deg);
+      width: 200px; height: 88px;
+      background: linear-gradient(135deg, #0a1a2e 0%, #0f2d52 50%, #0a1a2e 100%);
+      border-color: rgba(59,130,246,.18);
+      bottom: 20%; left: 4%;
+      transform: rotate(9deg);
       animation: float3 6.5s ease-in-out infinite;
     }
+    /* THB - Thailand - Purple */
     .bill-gbp {
-      width: 195px; height: 88px;
-      background: linear-gradient(135deg, #1a0a2e 0%, #280f42 50%, #1a0a2e 100%);
-      border-color: rgba(168,85,247,.15);
-      bottom: 18%; right: 5%;
-      transform: rotate(-9deg);
+      width: 205px; height: 90px;
+      background: linear-gradient(135deg, #1a0d2e 0%, #2d1854 50%, #1a0d2e 100%);
+      border-color: rgba(167,139,250,.18);
+      bottom: 16%; right: 3%;
+      transform: rotate(-10deg);
       animation: float4 9s ease-in-out infinite;
     }
+    /* PHP - Philippines - Blue */
     .bill-sgd {
-      width: 175px; height: 78px;
-      background: linear-gradient(135deg, #1a0d0d 0%, #2e1515 50%, #1a0d0d 100%);
-      border-color: rgba(239,68,68,.12);
-      top: 55%; left: 50%; transform: translateX(-50%) rotate(5deg);
+      width: 185px; height: 82px;
+      background: linear-gradient(135deg, #0a1e3a 0%, #0c3060 50%, #0a1e3a 100%);
+      border-color: rgba(96,165,250,.18);
+      top: 52%; left: 50%; transform: translateX(-50%) rotate(4deg);
       animation: float5 7.5s ease-in-out infinite;
     }
 
@@ -144,12 +149,11 @@
     .bill-amount { font-size: 1.55rem; letter-spacing: -1px; }
     .bill-code { font-size: .6rem; letter-spacing: .12em; opacity: .5; }
 
-    /* bill colours per currency */
-    .bill-usd .bill-amount { color: #4dff91; }
-    .bill-eur .bill-amount { color: #60a5fa; }
-    .bill-jpy .bill-amount { color: var(--accent); }
-    .bill-gbp .bill-amount { color: #c084fc; }
-    .bill-sgd .bill-amount { color: #f87171; }
+    .bill-usd .bill-amount { color: #f87171; }   /* IDR - merah */
+    .bill-eur .bill-amount { color: #fca5a5; }   /* SGD - merah muda */
+    .bill-jpy .bill-amount { color: #60a5fa; }   /* MYR - biru */
+    .bill-gbp .bill-amount { color: #a78bfa; }   /* THB - ungu */
+    .bill-sgd .bill-amount { color: #93c5fd; }   /* PHP - biru muda */
 
     /* coin floaters */
     .coin {
@@ -383,52 +387,20 @@
   <div class="hero-glow"></div>
   <div class="scan-line"></div>
 
-  <!-- Floating banknotes -->
+  <!-- IDR - Indonesia -->
   <div class="bill bill-usd">
     <div class="bill-inner">
       <div class="bill-top">
-        <span class="bill-flag">🇺🇸</span>
-        <span class="bill-country">United States</span>
+        <span class="bill-flag">🇮🇩</span>
+        <span class="bill-country">Indonesia</span>
       </div>
-      <div class="bill-amount">$100</div>
-      <div class="bill-code">US DOLLAR · USD</div>
+      <div class="bill-amount">Rp100K</div>
+      <div class="bill-code">RUPIAH · IDR</div>
     </div>
   </div>
 
+  <!-- SGD - Singapore -->
   <div class="bill bill-eur">
-    <div class="bill-inner">
-      <div class="bill-top">
-        <span class="bill-flag">🇪🇺</span>
-        <span class="bill-country">European Union</span>
-      </div>
-      <div class="bill-amount">€50</div>
-      <div class="bill-code">EURO · EUR</div>
-    </div>
-  </div>
-
-  <div class="bill bill-jpy">
-    <div class="bill-inner">
-      <div class="bill-top">
-        <span class="bill-flag">🇯🇵</span>
-        <span class="bill-country">Japan</span>
-      </div>
-      <div class="bill-amount">¥1000</div>
-      <div class="bill-code">JAPANESE YEN · JPY</div>
-    </div>
-  </div>
-
-  <div class="bill bill-gbp">
-    <div class="bill-inner">
-      <div class="bill-top">
-        <span class="bill-flag">🇬🇧</span>
-        <span class="bill-country">United Kingdom</span>
-      </div>
-      <div class="bill-amount">£50</div>
-      <div class="bill-code">BRITISH POUND · GBP</div>
-    </div>
-  </div>
-
-  <div class="bill bill-sgd">
     <div class="bill-inner">
       <div class="bill-top">
         <span class="bill-flag">🇸🇬</span>
@@ -436,6 +408,30 @@
       </div>
       <div class="bill-amount">S$50</div>
       <div class="bill-code">SINGAPORE DOLLAR · SGD</div>
+    </div>
+  </div>
+
+  <!-- MYR - Malaysia -->
+  <div class="bill bill-jpy">
+    <div class="bill-inner">
+      <div class="bill-top">
+        <span class="bill-flag">🇲🇾</span>
+        <span class="bill-country">Malaysia</span>
+      </div>
+      <div class="bill-amount">RM50</div>
+      <div class="bill-code">RINGGIT · MYR</div>
+    </div>
+  </div>
+
+  <!-- THB - Thailand -->
+  <div class="bill bill-gbp">
+    <div class="bill-inner">
+      <div class="bill-top">
+        <span class="bill-flag">🇹🇭</span>
+        <span class="bill-country">Thailand</span>
+      </div>
+      <div class="bill-amount">฿1000</div>
+      <div class="bill-code">THAI BAHT · THB</div>
     </div>
   </div>
 
@@ -455,45 +451,44 @@
       <button class="btn-outline">Lihat Demo →</button>
     </div>
 
-    <!-- Live ticker -->
     <div class="hero-ticker">
-      <div class="ticker-item">
-        <div class="ticker-flag">🇺🇸</div>
-        <div class="ticker-info">
-          <div class="ticker-code">USD / IDR</div>
-          <div class="ticker-rate">Rp 15.980 <span class="ticker-change up">▲ 0.12%</span></div>
-        </div>
-      </div>
-      <div class="ticker-sep"></div>
-      <div class="ticker-item">
-        <div class="ticker-flag">🇪🇺</div>
-        <div class="ticker-info">
-          <div class="ticker-code">EUR / IDR</div>
-          <div class="ticker-rate">Rp 17.350 <span class="ticker-change up">▲ 0.08%</span></div>
-        </div>
-      </div>
-      <div class="ticker-sep"></div>
-      <div class="ticker-item">
-        <div class="ticker-flag">🇯🇵</div>
-        <div class="ticker-info">
-          <div class="ticker-code">JPY / IDR</div>
-          <div class="ticker-rate">Rp 106.8 <span class="ticker-change dn">▼ 0.05%</span></div>
-        </div>
-      </div>
-      <div class="ticker-sep"></div>
-      <div class="ticker-item">
-        <div class="ticker-flag">🇬🇧</div>
-        <div class="ticker-info">
-          <div class="ticker-code">GBP / IDR</div>
-          <div class="ticker-rate">Rp 20.180 <span class="ticker-change up">▲ 0.21%</span></div>
-        </div>
-      </div>
-      <div class="ticker-sep"></div>
       <div class="ticker-item">
         <div class="ticker-flag">🇸🇬</div>
         <div class="ticker-info">
           <div class="ticker-code">SGD / IDR</div>
-          <div class="ticker-rate">Rp 11.920 <span class="ticker-change dn">▼ 0.03%</span></div>
+          <div class="ticker-rate">Rp 11.920 <span class="ticker-change up">▲ 0.12%</span></div>
+        </div>
+      </div>
+      <div class="ticker-sep"></div>
+      <div class="ticker-item">
+        <div class="ticker-flag">🇲🇾</div>
+        <div class="ticker-info">
+          <div class="ticker-code">MYR / IDR</div>
+          <div class="ticker-rate">Rp 3.390 <span class="ticker-change up">▲ 0.07%</span></div>
+        </div>
+      </div>
+      <div class="ticker-sep"></div>
+      <div class="ticker-item">
+        <div class="ticker-flag">🇹🇭</div>
+        <div class="ticker-info">
+          <div class="ticker-code">THB / IDR</div>
+          <div class="ticker-rate">Rp 440 <span class="ticker-change dn">▼ 0.04%</span></div>
+        </div>
+      </div>
+      <div class="ticker-sep"></div>
+      <div class="ticker-item">
+        <div class="ticker-flag">🇵🇭</div>
+        <div class="ticker-info">
+          <div class="ticker-code">PHP / IDR</div>
+          <div class="ticker-rate">Rp 278 <span class="ticker-change up">▲ 0.09%</span></div>
+        </div>
+      </div>
+      <div class="ticker-sep"></div>
+      <div class="ticker-item">
+        <div class="ticker-flag">🇻🇳</div>
+        <div class="ticker-info">
+          <div class="ticker-code">VND / IDR</div>
+          <div class="ticker-rate">Rp 0.62 <span class="ticker-change dn">▼ 0.02%</span></div>
         </div>
       </div>
     </div>
@@ -614,24 +609,47 @@
       <div class="acc-caption">Diuji pada 50.000+ sampel independen</div>
     </div>
     <div class="acc-card reveal">
-      <div class="acc-label">Standar Referensi Kurs</div>
-      <div class="acc-img">
-        <div style="display:flex;flex-direction:column;gap:10px;width:100%;padding:14px;">
-          <div style="display:flex;align-items:center;justify-content:space-between;background:rgba(245,200,66,.07);border-radius:8px;padding:10px 14px;">
-            <span style="font-size:.82rem;color:var(--muted2);">🏦 Bank Indonesia</span>
-            <span class="chip" style="font-size:.65rem;padding:3px 8px;">Live</span>
+      <div class="acc-label">Standar Referensi & Dataset</div>
+      <div class="acc-img" style="height:auto;background:transparent;margin-bottom:0;">
+        <div style="display:flex;flex-direction:column;gap:10px;width:100%;padding:4px 0 12px;">
+
+          <!-- Bank Indonesia -->
+          <div style="display:flex;align-items:center;gap:12px;background:rgba(245,200,66,.06);border:1px solid rgba(245,200,66,.12);border-radius:12px;padding:12px 16px;">
+            <div style="width:38px;height:38px;border-radius:10px;background:rgba(245,200,66,.12);display:grid;place-items:center;font-size:1.1rem;flex-shrink:0;">🏦</div>
+            <div style="flex:1;">
+              <div style="font-size:.88rem;font-weight:600;color:var(--text);">Bank Indonesia</div>
+              <div style="font-size:.72rem;color:var(--muted);margin-top:1px;">Referensi kurs resmi pemerintah</div>
+            </div>
+            <span class="chip" style="font-size:.65rem;padding:4px 10px;">Live</span>
           </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;background:rgba(59,130,246,.07);border-radius:8px;padding:10px 14px;">
-            <span style="font-size:.82rem;color:var(--muted2);">🌐 Open Exchange Rates</span>
-            <span class="chip-blue chip" style="font-size:.65rem;padding:3px 8px;">API</span>
+
+          <!-- Kaggle -->
+          <div style="display:flex;align-items:center;gap:12px;background:rgba(32,158,255,.06);border:1px solid rgba(32,158,255,.12);border-radius:12px;padding:12px 16px;">
+            <div style="width:38px;height:38px;border-radius:10px;background:rgba(32,158,255,.12);display:grid;place-items:center;flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" stroke="#20a4f3" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div style="flex:1;">
+              <div style="font-size:.88rem;font-weight:600;color:var(--text);">Kaggle Dataset</div>
+              <div style="font-size:.72rem;color:var(--muted);margin-top:1px;">Dataset uang ASEAN tervalidasi</div>
+            </div>
+            <span class="chip-blue chip" style="font-size:.65rem;padding:4px 10px;">Dataset</span>
           </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;background:rgba(245,200,66,.05);border-radius:8px;padding:10px 14px;">
-            <span style="font-size:.82rem;color:var(--muted2);">📊 Fixer.io</span>
-            <span class="chip" style="font-size:.65rem;padding:3px 8px;">Realtime</span>
+
+          <!-- Roboflow -->
+          <div style="display:flex;align-items:center;gap:12px;background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.12);border-radius:12px;padding:12px 16px;">
+            <div style="width:38px;height:38px;border-radius:10px;background:rgba(124,58,237,.12);display:grid;place-items:center;flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div style="flex:1;">
+              <div style="font-size:.88rem;font-weight:600;color:var(--text);">Roboflow</div>
+              <div style="font-size:.72rem;color:var(--muted);margin-top:1px;">Platform anotasi & training model</div>
+            </div>
+            <span style="display:inline-flex;align-items:center;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);color:#a78bfa;font-size:.65rem;font-weight:600;padding:4px 10px;border-radius:99px;">Vision AI</span>
           </div>
+
         </div>
       </div>
-      <div class="acc-caption">Kurs diperbarui setiap 60 detik</div>
+      <div class="acc-caption" style="margin-top:4px;">Kurs & data diperbarui secara berkala</div>
     </div>
   </div>
 </section>
@@ -643,54 +661,86 @@
   <div class="section-tag">Coba Langsung</div>
   <h2 class="section-title" style="margin:0 auto;">Coba Sekarang</h2>
   <p class="section-sub" style="margin:16px auto 0;">Upload foto uang kertas kamu dan lihat hasilnya — deteksi + konversi dalam hitungan detik.</p>
+
   <div class="demo-card reveal">
+
+    <!-- Upload Zone -->
     <div class="demo-upload" id="demo-drop">
-      <div class="upload-icon">📷</div>
-      <p>Upload foto uang kertas untuk dideteksi</p>
-      <span class="chip">Drag &amp; Drop atau Klik</span>
+      <div style="width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,rgba(245,200,66,.15),rgba(245,200,66,.05));border:1px solid rgba(245,200,66,.2);display:grid;place-items:center;margin-bottom:4px;">
+        <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="var(--accent)" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+      </div>
+      <p id="upload-label">Upload foto uang kertas untuk dideteksi</p>
+      <span class="chip" style="font-size:.7rem;">Drag &amp; Drop atau Klik</span>
     </div>
-    <div class="demo-output-label">Hasil Deteksi</div>
-    <div class="output-row active">
-      <input type="text" id="detect-output" placeholder="Mata uang yang terdeteksi akan muncul di sini…" readonly />
+
+    <!-- Detection Result -->
+    <div style="margin-top:20px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+        <span style="font-size:.72rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-weight:500;">Hasil Deteksi</span>
+        <span id="detect-badge" style="display:none;" class="chip-green chip" style="font-size:.65rem;padding:3px 10px;">✓ Terdeteksi</span>
+      </div>
+      <div style="background:var(--card);border:1px solid rgba(245,200,66,.15);border-radius:12px;padding:16px 18px;display:flex;align-items:center;gap:12px;">
+        <div id="detect-flag" style="font-size:1.8rem;line-height:1;flex-shrink:0;">🔍</div>
+        <div style="flex:1;">
+          <div id="detect-name" style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);">Menunggu foto...</div>
+          <div id="detect-detail" style="font-size:.75rem;color:var(--muted);margin-top:2px;">Upload foto uang kertas di atas</div>
+        </div>
+        <div id="detect-conf" style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:var(--accent);opacity:.3;">—</div>
+      </div>
     </div>
-    <div class="demo-convert-box">
-      <div style="font-size:.78rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-weight:500;margin-bottom:14px;text-align:left;">Konversi ke</div>
-      <div class="demo-convert-row">
-        <select id="from-cur">
-          <option value="USD">🇺🇸 USD — US Dollar</option>
-          <option value="EUR">🇪🇺 EUR — Euro</option>
-          <option value="JPY">🇯🇵 JPY — Japanese Yen</option>
-          <option value="GBP">🇬🇧 GBP — British Pound</option>
+
+    <!-- Converter -->
+    <div style="margin-top:14px;background:var(--card);border:1px solid rgba(245,200,66,.12);border-radius:14px;padding:18px 20px;">
+      <div style="font-size:.72rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-weight:500;margin-bottom:14px;">Konversi ke</div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+        <select id="from-cur" style="flex:1;background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:11px 14px;border-radius:10px;font-size:.88rem;font-family:'DM Sans',sans-serif;outline:none;cursor:pointer;">
+          <option value="IDR">🇮🇩 IDR — Indonesian Rupiah</option>
           <option value="SGD">🇸🇬 SGD — Singapore Dollar</option>
+          <option value="MYR">🇲🇾 MYR — Malaysian Ringgit</option>
+          <option value="THB">🇹🇭 THB — Thai Baht</option>
+          <option value="PHP">🇵🇭 PHP — Philippine Peso</option>
         </select>
         <div class="swap-btn" onclick="swapCurrency()">⇄</div>
-        <select id="to-cur">
-          <option value="IDR" selected>🇮🇩 IDR — Indonesian Rupiah</option>
-          <option value="USD">🇺🇸 USD — US Dollar</option>
-          <option value="EUR">🇪🇺 EUR — Euro</option>
-          <option value="MYR">🇲🇾 MYR — Malaysian Ringgit</option>
+        <select id="to-cur" style="flex:1;background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:11px 14px;border-radius:10px;font-size:.88rem;font-family:'DM Sans',sans-serif;outline:none;cursor:pointer;">
           <option value="SGD">🇸🇬 SGD — Singapore Dollar</option>
+          <option value="IDR" selected>🇮🇩 IDR — Indonesian Rupiah</option>
+          <option value="MYR">🇲🇾 MYR — Malaysian Ringgit</option>
+          <option value="THB">🇹🇭 THB — Thai Baht</option>
+          <option value="PHP">🇵🇭 PHP — Philippine Peso</option>
         </select>
       </div>
-      <div class="demo-result-num" id="convert-result">—</div>
-      <div class="demo-result-sub" id="convert-sub">Upload foto uang untuk melihat hasil konversi</div>
-    </div>
-    <div class="demo-stats">
-      <div class="demo-stat">
-        <label>Tingkat Akurasi</label>
-        <div class="dval" id="acc-val">—</div>
-      </div>
-      <div class="demo-stat">
-        <label>Waktu Proses</label>
-        <div class="dval" style="color:var(--accent2)" id="time-val">—</div>
+
+      <!-- Result display -->
+      <div style="background:var(--surface2);border-radius:10px;padding:18px;text-align:center;border:1px solid var(--border);">
+        <div id="convert-result" style="font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:var(--accent);line-height:1;">—</div>
+        <div id="convert-sub" style="font-size:.76rem;color:var(--muted);margin-top:6px;">Upload foto uang untuk melihat hasil konversi</div>
       </div>
     </div>
-    <div style="margin-top:16px;">
-      <button class="btn-upload-d" style="width:100%;" onclick="document.getElementById('demo-drop').click()">
-        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/></svg>
-        Upload Foto
-      </button>
+
+    <!-- Stats row -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;">
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;">
+        <div style="font-size:.7rem;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;margin-bottom:6px;">Tingkat Akurasi</div>
+        <div style="display:flex;align-items:baseline;gap:4px;">
+          <div id="acc-val" style="font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:var(--accent);">—</div>
+        </div>
+        <div style="height:3px;background:rgba(255,255,255,.06);border-radius:99px;margin-top:8px;overflow:hidden;">
+          <div id="acc-bar" style="height:100%;width:0%;background:linear-gradient(90deg,#f59e0b,var(--accent));border-radius:99px;transition:width 1s ease;"></div>
+        </div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;">
+        <div style="font-size:.7rem;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;margin-bottom:6px;">Waktu Proses</div>
+        <div id="time-val" style="font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:var(--accent2);">—</div>
+        <div style="font-size:.72rem;color:var(--muted);margin-top:6px;">Real-time inference</div>
+      </div>
     </div>
+
+    <!-- Upload button -->
+    <button class="btn-upload-d" style="width:100%;margin-top:14px;padding:15px;" onclick="document.getElementById('demo-drop').click()">
+      <svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/></svg>
+      Upload Foto Uang
+    </button>
+
   </div>
 </section>
 
@@ -722,22 +772,21 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  const mockCurrencies = [
-    { name:'US Dollar',         code:'USD', symbol:'$',  nominal:100,  flag:'🇺🇸' },
-    { name:'Euro',              code:'EUR', symbol:'€',  nominal:50,   flag:'🇪🇺' },
-    { name:'Japanese Yen',      code:'JPY', symbol:'¥',  nominal:1000, flag:'🇯🇵' },
-    { name:'British Pound',     code:'GBP', symbol:'£',  nominal:50,   flag:'🇬🇧' },
-    { name:'Singapore Dollar',  code:'SGD', symbol:'S$', nominal:50,   flag:'🇸🇬' },
-  ];
   const rates = {
-    USD:{ IDR:15980, EUR:0.92, JPY:149.5, GBP:0.79, SGD:1.34, MYR:4.71, USD:1 },
-    EUR:{ IDR:17350, USD:1.09, JPY:162.3, GBP:0.86, SGD:1.46, MYR:5.12, EUR:1 },
-    JPY:{ IDR:106.8, USD:0.0067, EUR:0.0062, GBP:0.0053, SGD:0.009, MYR:0.031, JPY:1 },
-    GBP:{ IDR:20180, USD:1.27, EUR:1.16, JPY:189.2, SGD:1.69, MYR:5.96, GBP:1 },
-    SGD:{ IDR:11920, USD:0.75, EUR:0.68, JPY:111.6, GBP:0.59, MYR:3.52, SGD:1 },
+    IDR:{ SGD:0.0000836, MYR:0.000295, THB:0.00228, PHP:0.0036, IDR:1 },
+    SGD:{ IDR:11920, MYR:3.52, THB:27.4, PHP:43.2, SGD:1 },
+    MYR:{ IDR:3390, SGD:0.284, THB:7.78, PHP:12.3, MYR:1 },
+    THB:{ IDR:436, SGD:0.0365, MYR:0.129, PHP:1.58, THB:1 },
+    PHP:{ IDR:276, SGD:0.0231, MYR:0.0814, THB:0.633, PHP:1 },
   };
-  let detectedCurrency = null;
-  const symMap = {IDR:'Rp ',EUR:'€',GBP:'£',JPY:'¥',SGD:'S$',MYR:'RM ',USD:'$'};
+  const symMap = {IDR:'Rp ',SGD:'S$',MYR:'RM ',THB:'฿',PHP:'₱'};
+  const mockCurrencies = [
+    { name:'Indonesian Rupiah',  code:'IDR', symbol:'Rp ', nominal:100000, flag:'🇮🇩' },
+    { name:'Singapore Dollar',   code:'SGD', symbol:'S$', nominal:50,     flag:'🇸🇬' },
+    { name:'Malaysian Ringgit',  code:'MYR', symbol:'RM', nominal:50,     flag:'🇲🇾' },
+    { name:'Thai Baht',          code:'THB', symbol:'฿',  nominal:1000,   flag:'🇹🇭' },
+    { name:'Philippine Peso',    code:'PHP', symbol:'₱',  nominal:1000,   flag:'🇵🇭' },
+  ];
 
   function formatNumber(n) {
     if(n>=1000) return n.toLocaleString('id-ID');
@@ -745,6 +794,7 @@
     if(n<1)     return n.toFixed(4);
     return n.toLocaleString('id-ID',{maximumFractionDigits:2});
   }
+  let detectedCurrency = null;
   function doConvert() {
     if(!detectedCurrency) return;
     const from=document.getElementById('from-cur').value, to=document.getElementById('to-cur').value;
@@ -752,7 +802,7 @@
     const result=detectedCurrency.nominal*rate;
     const sym=symMap[to]||'';
     document.getElementById('convert-result').textContent=sym+formatNumber(result);
-    document.getElementById('convert-sub').textContent=`1 ${from} = ${sym}${formatNumber(rate)} ${to} · Kurs diperbarui baru saja`;
+    document.getElementById('convert-sub').textContent='1 '+from+' = '+sym+formatNumber(rate)+' '+to+' · Kurs diperbarui berkala';
   }
   function swapCurrency() {
     const f=document.getElementById('from-cur'),t=document.getElementById('to-cur');
@@ -768,20 +818,30 @@
       if(!e.target.files[0]) return;
       drop.style.borderColor='var(--accent)';
       drop.style.background='rgba(245,200,66,.05)';
-      drop.querySelector('p').textContent='⏳ Mendeteksi mata uang...';
-      document.getElementById('detect-output').value='Menganalisis gambar...';
+      document.getElementById('upload-label').textContent='⏳ Mendeteksi mata uang...';
+      document.getElementById('detect-name').textContent='Menganalisis...';
+      document.getElementById('detect-detail').textContent='Memproses gambar';
+      document.getElementById('detect-flag').textContent='⏳';
+      document.getElementById('detect-conf').textContent='...';
+      document.getElementById('detect-conf').style.opacity='1';
       document.getElementById('convert-result').textContent='...';
       document.getElementById('acc-val').textContent='...';
       document.getElementById('time-val').textContent='...';
+      document.getElementById('acc-bar').style.width='0%';
       const start=Date.now();
       setTimeout(()=>{
         const picked=mockCurrencies[Math.floor(Math.random()*mockCurrencies.length)];
         detectedCurrency=picked;
         const elapsed=((Date.now()-start)/1000).toFixed(2);
         const conf=(94+Math.random()*5).toFixed(1);
-        drop.querySelector('p').textContent='✓ '+e.target.files[0].name;
-        document.getElementById('detect-output').value=`${picked.flag} Terdeteksi: ${picked.name} (${picked.code}) · Nominal: ${picked.symbol}${picked.nominal} · Confidence ${conf}%`;
+        document.getElementById('upload-label').textContent='✓ '+e.target.files[0].name;
+        document.getElementById('detect-flag').textContent=picked.flag;
+        document.getElementById('detect-name').textContent=picked.name+' ('+picked.code+') · '+picked.symbol+picked.nominal;
+        document.getElementById('detect-detail').textContent='Confidence '+conf+'% · Deteksi berhasil';
+        document.getElementById('detect-conf').textContent=conf+'%';
+        document.getElementById('detect-badge').style.display='inline-flex';
         document.getElementById('acc-val').textContent=conf+'%';
+        document.getElementById('acc-bar').style.width=conf+'%';
         document.getElementById('time-val').textContent=elapsed+'s';
         const fs=document.getElementById('from-cur');
         for(let o of fs.options){ if(o.value===picked.code){fs.value=picked.code;break;} }
