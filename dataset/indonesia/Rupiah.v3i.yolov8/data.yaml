@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 4
+names: ['10000', '1000IndonesianRupiah', '20000', '5000']
+
+roboflow:
+  workspace: rupiahcurrency
+  project: rupiah-k1bz7
+  version: 3
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/rupiahcurrency/rupiah-k1bz7/dataset/3

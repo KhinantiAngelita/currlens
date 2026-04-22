@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 6
+names: ['1 Ringgit', '10 Ringgit', '100 Ringgit', '20 Ringgit', '5 Ringgit', '50 Ringgit']
+
+roboflow:
+  workspace: neerwan
+  project: ringgit-detection
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/neerwan/ringgit-detection/dataset/1

@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['1000IndonesianRupiah']
+
+roboflow:
+  workspace: segunda-revision-2
+  project: indonesia-1k
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/segunda-revision-2/indonesia-1k/dataset/1

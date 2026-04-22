@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['1000BahtTai']
+
+roboflow:
+  workspace: tail-1000
+  project: thailand-1000
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/tail-1000/thailand-1000/dataset/1
