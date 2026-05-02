@@ -1,0 +1,42 @@
+path: dataset_clean
+
+train:
+  - indonesia/images
+  - malaysia/images
+  - singapore/images
+  - thailand/images
+
+val:
+  - indonesia/images
+  - malaysia/images
+  - singapore/images
+  - thailand/images
+
+
+names:
+  0: 1_Ringgit
+  1: 5_Ringgit
+  2: 10_Ringgit
+  3: 20_Ringgit
+  4: 50_Ringgit
+  5: 100_Ringgit
+
+  6: 2_SGD
+  7: 5_SGD
+  8: 10_SGD
+  9: 50_SGD
+  10: 100_SGD
+
+  11: 1000_Rupiah
+  12: 2000_Rupiah
+  13: 5000_Rupiah
+  14: 10000_Rupiah
+  15: 20000_Rupiah
+  16: 50000_Rupiah
+  17: 100000_Rupiah
+
+  18: 20_Baht
+  19: 50_Baht
+  20: 100_Baht
+  21: 500_Baht
+  22: 1000_Baht
