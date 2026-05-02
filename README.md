@@ -29,13 +29,6 @@ Sebelum menjalankan proyek, pastikan Anda sudah menginstal hal-hal berikut:
     pip install ultralytics flask flask-cors opencv-python pandas matplotlib
     ```
 
-## 📥 Download Model
-Karena file model (`best.pt`) berukuran besar, kami tidak menyimpannya di GitHub. Anda harus mengunduhnya secara manual:
-
-1.  **Download link**: [Klik di sini untuk Download best.pt (Google Drive)](https://drive.google.com/your-placeholder-link)
-2.  **Penyimpanan**: Masukkan file `best.pt` ke dalam folder:
-    `backend/runs/detect/currency_lens_v3_s/weights/`
-
 ## 🚀 Cara Menjalankan (INFERENCE)
 Ikuti langkah ini untuk menjalankan aplikasi di komputer Anda:
 
