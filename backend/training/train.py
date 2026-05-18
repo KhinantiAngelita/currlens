@@ -83,7 +83,7 @@ def train_model(model_type='s'):
     # Goal 2: Optimization for RTX 3050 Ti (4GB VRAM)
     try:
         model.train(
-            data=os.path.join("data", "multi_currency_gpu_v3", "data.yaml"),
+            data=os.path.join("data", "Philiphine Currency", "data.yaml"),
             epochs=80,
             imgsz=640,
             batch=12,         # Goal 2: Safer for 4GB VRAM
@@ -91,7 +91,7 @@ def train_model(model_type='s'):
             name=run_name,
             exist_ok=False,
             pretrained=True,
-            workers=4,        # Goal 2: Prevent CPU overload
+            workers=0,        # Goal 2: Prevent CPU overload
             amp=True          # Goal 2: Faster training
         )
         

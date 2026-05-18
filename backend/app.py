@@ -14,8 +14,8 @@ CORS(app)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 MODEL_PATHS = [
-    os.path.join(BASE_DIR, "runs", "detect", "currency_lens_v3_s", "weights", "best.pt"),
-    # os.path.join(BASE_DIR, "runs", "detect", "multi_currency_gpu_v2", "weights", "best.pt"),
+    # os.path.join(BASE_DIR, "runs", "detect", "currency_lens_v3_s", "weights", "best.pt"),
+    os.path.join(BASE_DIR, "..", "runs", "detect", "train-4", "weights", "best.pt"),
     # os.path.join(BASE_DIR, "runs", "detect", "currency_lens_v3_finetune-2", "weights", "best.pt"),
 ]
 
@@ -118,6 +118,19 @@ def predict():
 
             cls = int(box.cls[0])
             label = model.names[cls]
+
+
+            # # 🌟 UPDATE MAPPING: Sesuaikan Kelas_0 menjadi 1000 Peso 🌟
+            # if label == "Kelas_0" or label == "0":
+            #     label = "php_1000"  # <--- Ganti dari php_500 menjadi php_1000
+            # elif label == "Kelas_1" or label == "1":
+            #     label = "php_500"   # <--- Oper ke kelas 1 (jika nanti kelas 1 adalah 500)
+            # elif label == "Kelas_2" or label == "2":
+            #     label = "php_100"
+            # elif label == "Kelas_3" or label == "3":
+            #     label = "php_50"
+            # elif label == "Philippine-Peso":
+            #     label = "php_20"
 
             x1, y1, x2, y2 = box.xyxy[0].tolist()
 
