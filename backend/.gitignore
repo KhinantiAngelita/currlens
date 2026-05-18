@@ -15,12 +15,6 @@ share/
 # Node modules
 node_modules/
 
-# Training Outputs (MUST BE IGNORED FOR GITHUB)
-runs/
-*.log
-*.pckl
-.ipynb_checkpoints/
-
 # YOLO specific
 *.pt
 !models/*.pt  # Keep base models if needed, but usually ignored
@@ -32,6 +26,3 @@ runs/
 .DS_Store
 Thumbs.db
 desktop.ini
-
-runs/
-backend/data/
