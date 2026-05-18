@@ -5,13 +5,19 @@ import numpy as np
 import cv2
 import os
 
+print("✅ All imports successful")
+
 app = Flask(__name__)
+print("✅ Flask app created")
+
 CORS(app)
+print("✅ CORS enabled")
 
 # ==========================
 # LOAD MULTIPLE MODELS
 # ==========================
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+print(f"📁 BASE_DIR: {BASE_DIR}")
 
 MODEL_PATHS = [
     os.path.join(BASE_DIR, "runs", "detect", "currency_lens_v3_s", "weights", "best.pt"),
@@ -25,6 +31,7 @@ for path in MODEL_PATHS:
     if os.path.exists(path):
         print(f"🔥 LOAD MODEL: {path}")
         models.append(YOLO(path))
+        print(f"✅ MODEL LOADED: {path}")
     else:
         print(f"❌ MODEL NOT FOUND: {path}")
 
@@ -174,4 +181,7 @@ def predict():
 # RUN
 # ==========================
 if __name__ == "__main__":
+    print("\n" + "="*50)
+    print("🚀 STARTING FLASK SERVER")
+    print("="*50)
     app.run(debug=True)
