@@ -21,8 +21,8 @@ print(f"📁 BASE_DIR: {BASE_DIR}")
 
 MODEL_PATHS = [
     os.path.join(BASE_DIR, "runs", "detect", "currency_lens_v3_s", "weights", "best.pt"),
-    # os.path.join(BASE_DIR, "runs", "detect", "multi_currency_gpu_v2", "weights", "best.pt"),
-    # os.path.join(BASE_DIR, "runs", "detect", "currency_lens_v3_finetune-2", "weights", "best.pt"),
+    os.path.join(BASE_DIR, "runs", "detect", "multi_currency_gpu_v2", "weights", "best.pt"),
+    os.path.join(BASE_DIR, "runs", "detect", "currency_lens_v3_finetune-2", "weights", "best.pt"),
 ]
 
 models = []
