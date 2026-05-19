@@ -119,10 +119,20 @@ const currencyMap = {
 };
 
 function formatNumber(n) {
-    if(n>=1000) return n.toLocaleString('id-ID');
-    if(n<0.01)  return n.toFixed(6);
-    if(n<1)     return n.toFixed(4);
-    return n.toLocaleString('id-ID',{maximumFractionDigits:2});
+    if (n < 0.01) return n.toFixed(6);
+    if (n < 1)    return n.toFixed(4);
+    return n.toLocaleString('en-US', {
+        minimumFractionDigits: Number.isInteger(n) ? 0 : 2,
+        maximumFractionDigits: 2
+    });
+}
+
+function formatCurrency(curr, val) {
+    if (curr === 'IDR') {
+        return 'Rp ' + formatNumber(val).replace(/,/g, '.');
+    }
+    const symbol = symMap[curr] || (curr + ' ');
+    return symbol + formatNumber(val);
 }
 
 let detectedCurrency = null;
@@ -247,6 +257,7 @@ window.startDetection = async function() {
 
     const formData = new FormData();
     formData.append('image', selectedFile);
+
     
     // 🛠️ DEBUG LOGS
     console.log("📤 STARTING DETECTION...");
@@ -296,12 +307,12 @@ window.startDetection = async function() {
             const currencyCount = Object.keys(data.totals_by_currency || {}).length;
             if (currencyCount > 1) {
                 totalDisplay.innerHTML = Object.entries(data.totals_by_currency)
-                    .map(([curr, amt]) => `<span style="font-size: 1.2rem;">${curr}</span> ${formatNumber(amt)}`)
+                    .map(([curr, amt]) => `<span style="font-size: 1.2rem;">${curr}</span> ${formatCurrency(curr, amt)}`)
                     .join('<br>');
                 warning.style.display = 'block';
             } else if (currencyCount === 1) {
                 const [curr, amt] = Object.entries(data.totals_by_currency)[0];
-                totalDisplay.innerHTML = `<span style="font-size: 1.2rem;">${curr}</span> ${formatNumber(amt)}`;
+                totalDisplay.innerHTML = `<span style="font-size: 1.2rem;">${curr}</span> ${formatCurrency(curr, amt)}`;
                 warning.style.display = 'none';
             } else {
                 totalDisplay.textContent = 'Tidak Ada';
@@ -320,7 +331,7 @@ window.startDetection = async function() {
                         <div style="font-size: .85rem; font-weight: 600;">${item.readable || item.label}</div>
                         <div style="font-size: .7rem; color: var(--muted);">Confidence ${ (item.confidence * 100).toFixed(1) }%</div>
                     </div>
-                    <div style="font-family: 'Syne', sans-serif; font-weight: 700; color: var(--accent);">${formatNumber(item.nominal || 0)}</div>
+                    <div style="font-family: 'Syne', sans-serif; font-weight: 700; color: var(--accent);">${formatCurrency(item.currency, item.nominal || 0)}</div>
                 `;
                 listContainer.appendChild(div);
             });
@@ -338,6 +349,10 @@ window.startDetection = async function() {
             document.getElementById('acc-bar').style.width = avgConf + '%';
             document.getElementById('time-val').textContent = elapsed + 's';
 
+            const fromCurInput = document.getElementById('from-cur');
+            if (fromCurInput) {
+                fromCurInput.value = primary.currency;
+            }
             syncCustomSelect('from-select', primary.currency);
             doConvert();
         } else {
@@ -375,3 +390,5 @@ window.resetDetection = function() {
     document.getElementById('time-val').textContent = '—';
     document.getElementById('acc-bar').style.width = '0%';
 }
+
+

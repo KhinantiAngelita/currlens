@@ -312,6 +312,8 @@
 
   <div class="demo-card reveal">
 
+
+
     <!-- Upload Zone -->
     <div class="demo-upload-container" id="upload-container">
       <div class="demo-upload" id="demo-drop" onclick="document.getElementById('image-input').click()">
@@ -377,30 +379,8 @@
 
     <!-- Converter -->
     <div class="converter-container">
+      <input type="hidden" id="from-cur" value="IDR">
       <div class="converter-row">
-        <!-- From -->
-        <div class="currency-select-group">
-          <label>Dari (Detected)</label>
-          <div class="custom-select-wrapper" id="from-select">
-            <div class="custom-select-trigger" onclick="toggleSelect('from-select')">
-              <span>🇮🇩 IDR — Rupiah</span>
-            </div>
-            <div class="custom-options">
-              <div class="custom-option" data-value="IDR" onclick="selectOption('from-select', 'IDR', '🇮🇩 IDR — Rupiah')"><span class="flag">🇮🇩</span> IDR — Rupiah</div>
-              <div class="custom-option" data-value="MYR" onclick="selectOption('from-select', 'MYR', '🇲🇾 MYR — Ringgit')"><span class="flag">🇲🇾</span> MYR — Ringgit</div>
-              <div class="custom-option" data-value="SGD" onclick="selectOption('from-select', 'SGD', '🇸🇬 SGD — Singapore Dollar')"><span class="flag">🇸🇬</span> SGD — Singapore Dollar</div>
-              <div class="custom-option" data-value="THB" onclick="selectOption('from-select', 'THB', '🇹🇭 THB — Thai Baht')"><span class="flag">🇹🇭</span> THB — Thai Baht</div>
-              <div class="custom-option" data-value="PHP" onclick="selectOption('from-select', 'PHP', '🇵🇭 PHP — Philippine Peso')"><span class="flag">🇵🇭</span> PHP — Philippine Peso</div>
-            </div>
-            <input type="hidden" id="from-cur" value="IDR">
-          </div>
-        </div>
-
-        <!-- Swap -->
-        <button class="swap-button" onclick="swapCurrency()" title="Swap Currencies">
-          ⇄
-        </button>
-
         <!-- To -->
         <div class="currency-select-group">
           <label>Ke Mata Uang</label>

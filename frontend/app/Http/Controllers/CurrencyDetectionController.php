@@ -31,7 +31,8 @@ class CurrencyDetectionController extends Controller
             'image' => 'required|image|max:5120', // Max 5MB
         ]);
 
-        $result = $this->detectionService->predict($request->file('image'));
+        $mode = $request->input('mode', 'multi');
+        $result = $this->detectionService->predict($request->file('image'), $mode);
 
         if ($request->expectsJson()) {
             return response()->json($result);

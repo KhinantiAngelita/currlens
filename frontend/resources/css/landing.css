@@ -453,3 +453,4 @@ footer p { font-size:.85rem;color:var(--muted);font-weight:300;max-width:260px;l
   .swap-button:hover { transform: rotate(270deg) scale(1.1); }
   .result-value { font-size: 2.2rem; }
 }
+

@@ -34,14 +34,16 @@ class CurrencyDetectionService
      * @param \Illuminate\Http\UploadedFile $image
      * @return array
      */
-    public function predict($image)
+    public function predict($image, $mode = 'multi')
     {
         try {
             $response = Http::attach(
                 'image', 
                 file_get_contents($image->getRealPath()), 
                 $image->getClientOriginalName()
-            )->post("{$this->baseUrl}/predict");
+            )->post("{$this->baseUrl}/predict", [
+                'mode' => $mode
+            ]);
 
             if ($response->successful()) {
                 return $response->json();
