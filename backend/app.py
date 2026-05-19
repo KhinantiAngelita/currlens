@@ -13,13 +13,6 @@ print("✅ Flask app created")
 CORS(app)
 print("✅ CORS enabled")
 
-# =====================================================================
-# CHOOSE ACTIVE DETECTOR MODE
-# Use "multi" for ASEAN currencies (IDR, SGD, MYR, THB)
-# Use "php" for Philippine Currency (PHP and coins)
-# =====================================================================
-ACTIVE_MODE = "php"  # Change to "php" to use the highly accurate currency_lens_v3_s model!
-
 # ==========================
 # LOAD MULTIPLE MODELS
 # ==========================
@@ -27,8 +20,8 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 print(f"📁 BASE_DIR: {BASE_DIR}")
 
 MODEL_PATHS = {
-    "multi": os.path.join(BASE_DIR, "runs", "detect", "currency_lens_v5_combined-4", "weights", "best.pt"),
-    "php": os.path.join(BASE_DIR, "runs", "detect", "currency_lens_v3_s", "weights", "best.pt"),
+    "combined": os.path.join(BASE_DIR, "runs", "detect", "currency_lens_v5_combined-4", "weights", "best.pt"),
+    "asean": os.path.join(BASE_DIR, "runs", "detect", "currency_lens_v3_s", "weights", "best.pt"),
 }
 
 models = {}
@@ -157,22 +150,12 @@ def predict():
     print("📐 IMAGE SHAPE:", img.shape)
 
     # ==========================
-    # RUN ACTIVE MODEL BASED ON ACTIVE_MODE
+    # RUN ALL LOADED DETECTORS
     # ==========================
-    mode = ACTIVE_MODE
-    print(f"🎯 MODE DETEKSI (ACTIVE_MODE): {mode}")
-
-    active_models = []
-    if mode in models:
-        active_models.append(models[mode])
-    else:
-        # Fallback if no match
-        active_models = list(models.values())
-
     all_detections = []
 
-    for idx, model in enumerate(active_models):
-        print(f"\n🚀 RUN MODEL: {active_models[idx]}")
+    for name, model in models.items():
+        print(f"\n🚀 RUN MODEL ({name}): {model}")
 
         results = model(img, conf=0.05, iou=IOU_THRESHOLD)
 
