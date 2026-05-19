@@ -1,16 +1,20 @@
-path: dataset_clean
+path: D:/Software/laragon/www/currlens/backend/dataset_clean/Philiphine Currency
+train: train/images
+val: valid/images
 
-train:
-  - indonesia/images
-  - malaysia/images
-  - singapore/images
-  - thailand/images
+# train:
+#   # - indonesia/images
+#   # - malaysia/images
+#   # - singapore/images
+#   # - thailand/images
+#   - Philiphine Currency/train/images
 
-val:
-  - indonesia/images
-  - malaysia/images
-  - singapore/images
-  - thailand/images
+# val:
+#   # - indonesia/images
+#   # - malaysia/images
+#   # - singapore/images
+#   # - thailand/images
+#   - Philiphine Currency/valid/images
 
 
 names:
@@ -40,3 +44,10 @@ names:
   20: 100_Baht
   21: 500_Baht
   22: 1000_Baht
+
+  23: php_20
+  24: php_50
+  25: php_100
+  26: php_200
+  27: php_500
+  28: php_1000

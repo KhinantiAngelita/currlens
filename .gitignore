@@ -1,0 +1,10 @@
+# Abaikan folder virtual environment Python agar tidak masuk GitHub
+backend/venv/
+venv/
+.venv/
+Env/
+
+# Abaikan file cache Python dan os
+__pycache__/
+*.pyc
+.DS_Store

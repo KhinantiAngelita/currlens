@@ -20,9 +20,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 print(f"📁 BASE_DIR: {BASE_DIR}")
 
 MODEL_PATHS = [
-    os.path.join(BASE_DIR, "runs", "detect", "currency_lens_v3_s", "weights", "best.pt"),
-    # os.path.join(BASE_DIR, "runs", "detect", "multi_currency_gpu_v2", "weights", "best.pt"),
-    # os.path.join(BASE_DIR, "runs", "detect", "currency_lens_v3_finetune-2", "weights", "best.pt"),
+    # Mundur satu langkah pake ".." karena folder runs ada di luar backend
+    os.path.join(BASE_DIR, "runs", "detect", "currency_lens_v3_s", "weights", "best_lama.pt"),
+    os.path.join(BASE_DIR, "..", "runs", "detect", "currency_lens_v5_combined-4", "weights", "best.pt"),
 ]
 
 models = []
@@ -68,17 +68,39 @@ def iou(box1, box2):
 def merge_boxes(all_dets):
     final = []
 
+    # 1. Urutkan semua tebakan dari persentase (confidence) tertinggi ke terendah
     for det in sorted(all_dets, key=lambda x: x["confidence"], reverse=True):
         keep = True
         for f in final:
-            if det["label"] == f["label"]:
-                if iou(det["box"], f["box"]) > 0.6:
-                    keep = False
-                    break
+            # 2. Cek apakah posisi kotaknya numpuk di lembar uang yang sama (IoU > 0.40)
+            # Tanpa peduli labelnya apa, kalau numpuk berarti itu uang yang sama!
+            if iou(det["box"], f["box"]) > 0.40:
+                keep = False
+                break
         if keep:
             final.append(det)
 
     return final
+
+# ============================================================
+# PENERJEMAH KELAS MATA UANG 
+# ============================================================
+def parse_class(name):
+    try:
+        # Jika formatnya php_20 (Filipina)
+        if name.startswith("php_"):
+            val = name.replace("php_", "")
+            return "PHP", int(val)
+        
+        # Jika formatnya negara lain (ex: 1000_Rupiah)
+        parts = name.split("_")
+        if parts[0].isdigit():
+            return parts[1].upper(), int(parts[0])
+        else:
+            return parts[0].upper(), int(parts[1])
+    except Exception as e:
+        print(f"⚠️ Error parsing class {name}: {e}")
+        return "UNKNOWN", 0
 
 
 # ==========================
@@ -111,7 +133,7 @@ def predict():
     for idx, model in enumerate(models):
         print(f"\n🚀 RUN MODEL {idx+1}")
 
-        results = model(img, conf=0.05, iou=IOU_THRESHOLD)
+        results = model(img, conf=0.50, iou=IOU_THRESHOLD)
 
         boxes = results[0].boxes
 
