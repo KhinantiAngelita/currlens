@@ -18,7 +18,7 @@ print("✅ CORS enabled")
 # Use "multi" for ASEAN currencies (IDR, SGD, MYR, THB)
 # Use "php" for Philippine Currency (PHP and coins)
 # =====================================================================
-ACTIVE_MODE = "php"  # Change to "php" to switch to Philippine mode!
+ACTIVE_MODE = "multi"  # Change to "multi" to use the new combined model!
 
 # ==========================
 # LOAD MULTIPLE MODELS
